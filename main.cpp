@@ -94,30 +94,20 @@ int main() {
 					rarr[j] = rarr[j+1];
 					rarr[j+1] = rtemp;
 				}
-				// Reset the current rectangle color to White
-				rarr[j].setFillColor(Color::White);
 
-				// Move to the next rectangle
+				rarr[j].setFillColor(Color::White);
 				j++;
 
-				// Check if the inner loop has finished
 				if (j == arr.size() - i - 1) {
-					// Finalize the last unsorted item in this pass
 					rarr[arr.size() - i - 1].setFillColor(Color::White);
-
-					// Reset `j` for the next pass
 					j = 0;
-
-					// Move to the next outer loop iteration
 					i++;
 
-					// Highlight the next unsorted item (if any) in Green
 					if (i < arr.size() - 1) {
 						rarr[j].setFillColor(Color::Green);
 					}
 				}
 				else {
-					// Highlight the next rectangle in Green
 					rarr[j].setFillColor(Color::Green);
 				}
 			}
